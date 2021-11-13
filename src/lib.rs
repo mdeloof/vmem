@@ -43,6 +43,11 @@ impl<const W: usize> VMem<W> {
         self.len
     }
 
+    /// The width of the `VMem`
+    pub fn width(&self) -> usize {
+        W
+    }
+
     /// Read word at a the specified address.
     pub fn read_word(&self, addr: usize) -> Option<[u8; W]> {
         if addr < self.len {
